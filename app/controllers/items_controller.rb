@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
     
         if @item.save
           # redirect_to [@department, @item]
-          redirect_to department_item_path(@department, @item)
+          redirect_to department_items_path(@department, @item)
         else
           render :new
         end
@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
     
       def destroy
         @item.destroy
-        redirect_to department_item_path(@department)
+        redirect_to department_items_path(@department)
       end
     
       private
@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
       end
     
       def item_params
-        params.require(:item).permit(:name, :description, :price)
+        params.require(:item).permit(:name, :desciption, :price)
       end
     end
     

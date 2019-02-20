@@ -1,1 +1,12 @@
 <h1><%= @department.name %></h1>
+
+<ul>
+<% @department.items.each do |item| %>
+  <li><%= link_to item.name, [@department, item] %></li>
+
+<% end %>
+</ul>
+<hr />
+<%= link_to "New Item", new_department_item_path %>
+<%= link_to "Back", department_path(@department) %>
+

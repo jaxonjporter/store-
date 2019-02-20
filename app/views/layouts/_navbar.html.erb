@@ -1,1 +1,4 @@
 <%= link_to "Home", root_path %>
+<% Department.all.each do |d| %>
+  <%= link_to d.name, department_path(d) %>
+<% end %>
